@@ -1,0 +1,48 @@
+p{
+	text-align: justify;
+}
+.top{
+	padding-top: 19px !important;
+}
+.left, .right{
+	float: left;
+}
+.left img{
+	padding: 10px 20px 10px 10px;
+}
+.right{
+	width: 55%;
+}
+.item{
+	margin: 20px 10px 0px 10px;
+	padding-bottom: 10px;
+	float: left;
+	border-bottom: 1px solid lightgrey;
+	width: 98%;
+}
+.item:nth-last-child(1){
+	border-bottom: 0px;
+}
+.padding{
+	margin: 20px;
+}
+.bottom{
+	margin-bottom: 10px;
+}
+.navbar-laravel {
+    background-color: #960707;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color: white;
+}
+.pagination{
+   justify-content: center;
+}
+.perfect{
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+}
