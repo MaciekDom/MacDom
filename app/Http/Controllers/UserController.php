@@ -49,4 +49,35 @@ class UserController extends Controller
             return redirect()->back();
         }                
     }
+
+    public function delete($id){ // funkcja kasująca konto uzytkownika z poziomu administratora
+
+        $query = DB::table('users')->where('id', $id)->delete();
+
+        $query2 = DB::table('users_machines')
+        ->where('id_users', $id)
+        ->delete();
+
+        if($query == true){
+            Session::flash('success', 'Użytkownik został usunięty'); 
+        }
+        else{
+            Session::flash('error', 'Wystąpił błąd. Proszę spróbować poźniej'); 
+        }
+        return redirect()->back();
+    }
+
+    public function destroy(){ // funkcja kasująca konto uzytkownika przez jego wlasciciela
+
+        $id = Auth::id();
+        Auth::logout();
+        $query = DB::table('users')->where('id', $id)->delete();
+
+        $query2 = DB::table('users_machines')
+        ->where('id_machines', $id)
+        ->delete();
+
+        return redirect('/');
+    }
+
 }

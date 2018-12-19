@@ -72,19 +72,24 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                         <h2 class="padding">Jesteś zalogowany jako {{Auth::user()->name}}</h2>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         @if(Auth::user()->login!="admin")
                           <a onclick="return confirm('Jesteś pewny? Operacji tej nie będzie można cofnąć!')" href="{{ url('destroy') }}"><button class="btn btn-danger padding float-right">Usuń konto</button></a>
                         @else
-                          <button class="btn btn-success padding" data-toggle="modal" data-target="#modal-machine">Dodaj nową maszynę</button>  
+                          <button class="btn btn-success padding" data-toggle="modal" data-target="#modal-machine">Dodaj maszynę</button>  
+                          <a href="{{url('archive')}}"><button class="btn btn-secondary padding">Archiwum przeglądów</button></a>
                         @endif  
                         <button class="btn btn-primary padding float-right" data-toggle="modal" data-target="#modal-change_pass">Zmień hasło</button>
                     </div>
-                   
-                </div>    
+                </div> 
+
+
+
+
+
                 @if(Auth::user()->login=="admin")
                     <div class="perfect">
                         <div class="card">
